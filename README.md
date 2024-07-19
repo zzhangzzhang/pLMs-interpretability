@@ -2,7 +2,8 @@
 In the folder 'jac', we provide the notebooks for:
 - Jacobian calculation and visualisation (notebook 1-3)
 - Calculate, compare, and plot the difference in contact prediction accuracy for different methods (notebook 3-4)
-- Calculate and plot pairwise potentials with different cutoffs (notebook 5-6) 
+- Calculate and plot pairwise potentials with different cutoffs (notebook 5-6)
+- Compare categorical Jac from seqs from the same MSA (notebook 7-8) 
 # Contact recovery experiments 
 In the folder 'contact_recovery', we provide the notebooks for:
 - Prepare the secondary structure information needed for secondary structure element (SSE) pair contact recovery (notebook 0) 
