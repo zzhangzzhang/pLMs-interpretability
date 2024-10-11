@@ -51,7 +51,7 @@ def inv_cov(Y):
   Y_flat = Y.reshape(N,-1)
   c = np.cov(Y_flat.T)
   shrink = 4.5/np.sqrt(N) * np.eye(c.shape[0])
-  ic = -np.linalg.inv(c + shrink)
+  ic = - np.linalg.inv(c + shrink)
   raw = np.sqrt(np.square(ic.reshape(L,A,L,A)[:,:20,:,:20]).sum((1,3)))
   return {"c":c, "ic":ic,
           "raw":raw, "apc":_do_apc(raw)}
@@ -62,7 +62,7 @@ def inv_cov_jax(Y):
   Y_flat = Y.reshape(N,-1)
   c = jnp.cov(Y_flat.T)
   shrink = 4.5/jnp.sqrt(N) * jnp.eye(c.shape[0])
-  ic = -jnp.linalg.inv(c + shrink)
+  ic = - jnp.linalg.inv(c + shrink)
   raw = jnp.sqrt(jnp.square(ic.reshape(L,A,L,A)[:,:20,:,:20]).sum((1,3)))
   raw = np.array(raw)
   return {"c":np.array(c),"ic":np.array(ic),
